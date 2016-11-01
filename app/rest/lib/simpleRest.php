@@ -13,6 +13,10 @@ class SimpleRest {
 
 		header($this->httpVersion. " ". $statusCode ." ". $statusMessage);
 		header("Content-Type:". $contentType);
+        header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');
+        header('Cache-Control: no-store, no-cache, must-revalidate');
+        header('Cache-Control: post-check=0, pre-check=0', FALSE);
+        header('Pragma: no-cache');
 	}
 
 	public function getHttpStatusMessage($statusCode){
@@ -52,6 +56,7 @@ class SimpleRest {
 				415 => 'Unsupported Media Type',
 				416 => 'Requested Range Not Satisfiable',
 				417 => 'Expectation Failed',
+                440 => 'Login Timeout',
 				500 => 'Internal Server Error',
 				501 => 'Not Implemented',
 				502 => 'Bad Gateway',

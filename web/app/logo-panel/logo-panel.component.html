@@ -1,0 +1,29 @@
+<div *ngIf="needsAuthentication">
+  <div class="loginPanel">
+
+
+    <div class="row">
+
+        <div>
+          <label style="width:150px;">User Name : </label>
+          <input [(ngModel)]="_userName"  required name="userName" #userName="ngModel">
+          <div [hidden]="userName.valid || userName.pristine"
+               class="alert alert-danger">
+            Name is required
+          </div>
+        </div>
+        <div>
+          <label style="width:150px;">Password : </label>
+          <input [(ngModel)]="_password" required name="password" #password="ngModel">
+          <div [hidden]="password.valid || password.pristine"
+               class="alert alert-danger">
+            Password is required
+          </div>
+        </div>
+        <button (click)="onSubmit()">Login</button>
+
+    </div>
+  </div>
+
+
+</div>

@@ -3,6 +3,7 @@ require_once("lib/database/MysqliDb.php");
 require_once("lib/database/dbObject.php");
 require_once("lib/database/models/user.php");
 require_once("lib/database/models/person.php");
+require_once("lib/database/models/session.php");
 
 
 global $db;
